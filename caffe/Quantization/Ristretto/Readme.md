@@ -4,7 +4,7 @@
 1. 量化到动态定点  
 运行量化网络：./examples/ristretto/00_quantize_squeezenet.sh
 2. finetune 微调动态固定点参数  
-./examples/ristretto/01_finetune_squeezenet.sh
+./examples/ristretto/01_finetune_squeezenet.sh  
 3. SqueezeNet动态固定点基准测试  
 ./examples/ristretto/02_benchmark_fixedpoint_squeezenet.sh
 4. 原始全精度网络测试与上面的8位定点量化的测试结果作对比  
@@ -26,4 +26,23 @@ I0706 17:52:51.232930  1906 caffe.cpp:309] Loss: 1.29234
 I0706 17:52:51.232959  1906 caffe.cpp:321] accuracy = 0.687882
 I0706 17:52:51.232973  1906 caffe.cpp:321] accuracy_top5 = 0.877103
 I0706 17:52:51.232987  1906 caffe.cpp:321] loss = 1.29234 (* 1 = 1.29234 loss)
+```
+# mobilenet模型
+```
+MobileNets-v1:
+    论文：https://arxiv.org/pdf/1704.04861.pdf
+    分类准确率：
+    top-1：70.81
+    top-5：89.85 
+    模型大小： 16.2 MB
+    模型：https://github.com/shicai/MobileNet-Caffe/blob/master/mobilenet.caffemodel
+    框架：https://github.com/Ewenwan/MVision/blob/master/CNN/MobileNet/mobilenet_v1_deploy.prototxt
+MobileNets-v2:
+    论文：https://arxiv.org/pdf/1801.04381.pdf
+    分类准确率：
+        top-1：71.90%
+        top-5：90.49%
+    模型大小：13.5 MB
+    模型：https://github.com/shicai/MobileNet-Caffe/blob/master/mobilenet_v2.caffemodel
+    框架：https://github.com/Ewenwan/MVision/blob/master/CNN/MobileNet/mobilenet_v2_deploy.prototxt
 ```
