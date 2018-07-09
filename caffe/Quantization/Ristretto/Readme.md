@@ -10,6 +10,8 @@
 4. 原始全精度网络测试与上面的8位定点量化的测试结果作对比  
 ./examples/ristretto/benchmark_floatingpoint_squeezenet.sh
 
+*以上脚本及prototex中应注意路径的配置
+
 ## 测试结果
 - finetune后  
 ```
@@ -52,4 +54,34 @@ MobileNets-v2:
 测试出问题
 ```
 
-# VggNet
+# ResNet
+
+## quantization 结果（2000）
+```
+I0710 00:38:40.907178 20641 quantization.cpp:277] Network accuracy analysis for
+I0710 00:38:40.907184 20641 quantization.cpp:278] Convolutional (CONV) and fully
+I0710 00:38:40.907191 20641 quantization.cpp:279] connected (FC) layers.
+I0710 00:38:40.907196 20641 quantization.cpp:280] Baseline 32bit float: 0.88
+I0710 00:38:40.907210 20641 quantization.cpp:281] Dynamic fixed point CONV
+I0710 00:38:40.907217 20641 quantization.cpp:282] weights: 
+I0710 00:38:40.907222 20641 quantization.cpp:284] 16bit: 	0.88
+I0710 00:38:40.907230 20641 quantization.cpp:284] 8bit: 	0.8775
+I0710 00:38:40.907238 20641 quantization.cpp:284] 4bit: 	0.001
+I0710 00:38:40.907274 20641 quantization.cpp:287] Dynamic fixed point FC
+I0710 00:38:40.907281 20641 quantization.cpp:288] weights: 
+I0710 00:38:40.907289 20641 quantization.cpp:290] 16bit: 	0.88
+I0710 00:38:40.907315 20641 quantization.cpp:290] 8bit: 	0.879375
+I0710 00:38:40.907323 20641 quantization.cpp:290] 4bit: 	0.79075
+I0710 00:38:40.907331 20641 quantization.cpp:292] Dynamic fixed point layer
+I0710 00:38:40.907351 20641 quantization.cpp:293] activations:
+I0710 00:38:40.907357 20641 quantization.cpp:295] 16bit: 	0.03475
+I0710 00:38:40.907377 20641 quantization.cpp:298] Dynamic fixed point net:
+I0710 00:38:40.907395 20641 quantization.cpp:299] 8bit CONV weights,
+I0710 00:38:40.907402 20641 quantization.cpp:300] 8bit FC weights,
+I0710 00:38:40.907408 20641 quantization.cpp:301] 32bit layer activations:
+I0710 00:38:40.907423 20641 quantization.cpp:302] Accuracy: 0.0293125
+I0710 00:38:40.907444 20641 quantization.cpp:303] Please fine-tune.
+```
+
+
+
