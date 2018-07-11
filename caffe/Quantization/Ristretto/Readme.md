@@ -83,6 +83,8 @@ I0710 00:38:40.907408 20641 quantization.cpp:301] 32bit layer activations:
 I0710 00:38:40.907423 20641 quantization.cpp:302] Accuracy: 0.0293125
 I0710 00:38:40.907444 20641 quantization.cpp:303] Please fine-tune.
 ```
+Q1：可见16bit的输入不符合要求，那么使用的是32bit的int还是float，既然其余两个的精度很高，为什么平均精度会这么低。在嵌入式设备中这里的精度是怎么选择的。
+
 ## funetuning后精度
 ```
 I0711 18:20:30.194677 16329 caffe.cpp:309] Loss: 0
@@ -130,6 +132,15 @@ I0711 18:35:49.335003 15096 quantization.cpp:303] Please fine-tune.
 ```
 
 ## funetuning后精度
-
+```
+I0712 02:56:09.988304 29455 solver.cpp:331]     Iteration 2000, loss = 1.00953
+I0712 03:01:59.951297 29455 solver.cpp:418]     Test net output #0: accuracy = 0.775083
+I0712 03:01:59.951407 29455 solver.cpp:418]     Test net output #1: accuracy_top5 = 0.94352
+```
 
 ## 原始精度
+```
+I0712 03:19:40.112874 39099 caffe.cpp:309] Loss: 0
+I0712 03:19:40.113019 39099 caffe.cpp:321] accuracy = 0.775023
+I0712 03:19:40.113091 39099 caffe.cpp:321] accuracy_top5 = 0.9435
+```
