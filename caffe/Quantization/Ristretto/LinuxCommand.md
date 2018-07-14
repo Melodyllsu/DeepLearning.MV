@@ -61,3 +61,7 @@ git diff [file]
 
 19. 回到上一个版本  
 git checkout [file]  
+
+20. 查看电脑资源使用情况  
+htop  如果没有就安装 sudo apt-get install htop  
+
