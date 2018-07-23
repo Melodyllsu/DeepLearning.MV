@@ -29,30 +29,6 @@ I0706 17:52:51.232959  1906 caffe.cpp:321] accuracy = 0.687882
 I0706 17:52:51.232973  1906 caffe.cpp:321] accuracy_top5 = 0.877103
 I0706 17:52:51.232987  1906 caffe.cpp:321] loss = 1.29234 (* 1 = 1.29234 loss)
 ```
-# mobilenet模型
-```
-MobileNets-v1:
-    论文：https://arxiv.org/pdf/1704.04861.pdf
-    分类准确率：
-    top-1：70.81
-    top-5：89.85 
-    模型大小： 16.2 MB
-    模型：https://github.com/shicai/MobileNet-Caffe/blob/master/mobilenet.caffemodel
-    框架：https://github.com/Ewenwan/MVision/blob/master/CNN/MobileNet/mobilenet_v1_deploy.prototxt
-MobileNets-v2:
-    论文：https://arxiv.org/pdf/1801.04381.pdf
-    分类准确率：
-        top-1：71.90%
-        top-5：90.49%
-    模型大小：13.5 MB
-    模型：https://github.com/shicai/MobileNet-Caffe/blob/master/mobilenet_v2.caffemodel
-    框架：https://github.com/Ewenwan/MVision/blob/master/CNN/MobileNet/mobilenet_v2_deploy.prototxt
-```
-## 测试结果
-
-```
-测试出问题
-```
 
 # ResNet
 
@@ -84,6 +60,7 @@ I0710 00:38:40.907423 20641 quantization.cpp:302] Accuracy: 0.0293125
 I0710 00:38:40.907444 20641 quantization.cpp:303] Please fine-tune.
 ```
 Q1：可见16bit的输入不符合要求，那么使用的是32bit的int还是float，既然其余两个的精度很高，为什么平均精度会这么低。在嵌入式设备中这里的精度是怎么选择的。
+A1: 使用的是float
 
 ## funetuning后精度
 ```
