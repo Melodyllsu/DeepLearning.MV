@@ -51,6 +51,7 @@ git status
 
 16. 提交新版本  
 git commit -s  
+git commit -m <message>
  
 17. 邮箱和账户名   
 git config --global user.email "chensuyue@hik.com"  
