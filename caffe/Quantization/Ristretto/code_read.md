@@ -26,8 +26,12 @@ DEFINE_double(error_margin, 2,//设定误差允许的范围，默认值为2%
     "Optional: the allowed accuracy drop in %");
 ```
 
-tips：##字符串连接
+## tips：
+- ##字符串连接
 
-- Q: ristretto.cpp 与 quantization.cpp是如何联系的？
+## Q&A
+- Q: ristretto.cpp 与 quantization.cpp是如何联系的？A: 貌似是通过注册函数quantize。
 
-- 
+- Q: 查询quantize产生的日志，对照quantization.cpp 150行左右输出。
+
+- Q: 查看产生参数范围的代码。
