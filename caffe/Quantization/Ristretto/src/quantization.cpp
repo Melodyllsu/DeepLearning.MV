@@ -43,7 +43,7 @@ void Quantization::QuantizeNet() {
   // values. Do statistic for 10 batches.
   Net<float>* net_test = new Net<float>(model_, caffe::TRAIN);
   net_test->CopyTrainedLayersFrom(weights_);
-  RunForwardBatches(10, net_test, &accuracy, true);
+  RunForwardBatches(10, net_test, &accuracy, true);//从10个batch中获得各层参数的范围（绝对值），包括输入、输出和权重
   delete net_test;
   // Do network quantization and scoring.
   if (trimming_mode_ == "dynamic_fixed_point") {
@@ -116,7 +116,7 @@ void Quantization::RunForwardBatches(const int iterations,
     // Find maximal values in network.
     if(do_stats) {
       caffe_net->RangeInLayers(&layer_names_, &max_in_, &max_out_,
-          &max_params_);
+          &max_params_);//找到每一层权重和输入输出范围
     }
     // Keep track of network score over multiple batches.
     loss += iter_loss;
@@ -161,10 +161,10 @@ void Quantization::Quantize2DynamicFixedPoint() {
   // This approximation assumes an infinitely long factional part.
   // For layer activations, we reduce the integer length by one bit.
   for (int i = 0; i < layer_names_.size(); ++i) {
-    il_in_.push_back((int)ceil(log2(max_in_[i])));
-    il_out_.push_back((int)ceil(log2(max_out_[i])));
+    il_in_.push_back((int)ceil(log2(max_in_[i]))); //取大于最大值的，二进制能表达的最大整数，作为整数部分的长度，其余长度用于表达小数部分。
+    il_out_.push_back((int)ceil(log2(max_out_[i])));//每层参数的量纲是统一的，所有的整数位都用于表示尾数，而在真实的工作环境中，各不同层的量纲也是统一的方便计算。
     il_params_.push_back((int)ceil(log2(max_params_[i])+1));
-  }
+  }//得到整数范围，也就是量纲
   // Debug
   for (int k = 0; k < layer_names_.size(); ++k) {
     LOG(INFO) << "Layer " << layer_names_[k] <<
