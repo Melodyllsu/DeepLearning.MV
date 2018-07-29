@@ -85,11 +85,11 @@ int quantize(){
   Quantization* q = new Quantization(FLAGS_model, FLAGS_weights,
       FLAGS_model_quantized, FLAGS_iterations, FLAGS_trimming_mode,
       FLAGS_error_margin, FLAGS_gpu);
-  q->QuantizeNet();
+  q->QuantizeNet();//进入量化
   delete q;
   return 0;
 }
-RegisterBrewFunction(quantize);
+RegisterBrewFunction(quantize); //注册函数
 
 int main(int argc, char** argv) {
   // Print output to stderr (while still logging).
