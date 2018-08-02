@@ -7,7 +7,7 @@
 
 - [.proto文件的中文注释](https://blog.csdn.net/mac_lzq/article/details/63725009)
 
-- (caffe 源码解析)[https://blog.csdn.net/tianrolin]
+- [caffe 源码解析](https://blog.csdn.net/tianrolin)
 
 
 ###  构建网络
