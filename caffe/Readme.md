@@ -9,6 +9,7 @@
 
 - [caffe 源码解析](https://blog.csdn.net/tianrolin)
 
+- [caffe 代码解析](http://alanse7en.github.io/caffedai-ma-jie-xi-4/)
 
 ###  构建网络
 1. 使用Caffe自带的网络配置文件lenet_train_test.prototxt，开始启动训练网络.  
