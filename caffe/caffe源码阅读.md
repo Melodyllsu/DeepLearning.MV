@@ -25,10 +25,11 @@ class Net
     }
 }
 ```
-4. 正向传导函数Forward()调用了ForwardFromTo(int start, int end)函数，在该函数中，将整个网络从start到end遍历每一层，调用各层的（layers_为指向父类layer的智能指针）layers_[i] -> Forward(bottom_vecs_[i], top_vecs_[i]).若该层为loss层则计算layers_loss,否则返回0.  
+4. 正向传导函数Forward()调用了ForwardFromTo(int start, int end)函数，在该函数中，将整个网络从start到end遍历每一层，调用各层的（layers_为父类layer的智能指针）layers_[i] -> Forward(bottom_vecs_[i], top_vecs_[i]).若该层为loss层则计算layers_loss,否则返回0.  
 > 虽然Forward()不是虚函数，但是它包装了虚函数Forward_cpu()和Forward_gpu()，分别对应CPU版本和GPU版本。其中Forward_cpu()为父类Layer的纯虚函数，必须被子类重载。而Forward_gpu()在父类Layer中的实现为直接调用Forward_cpu()，于是该虚函数的实现为可选。总的来说，正因为这两个虚函数，所以不同层有不同的正向传导计算方法。  
 > 在Step()函数的while循环中,终止条件是max_iter. ForwardBackward()外部还有一层for循环，终止条件是iter_size，为了在内存有限的情况下扩大实际batch = batch_size × iter_size.  每一组iter_size计算一次loss。
 5. 反向传导函数Backward()调用了BackwardFromTo(int start, int end)函数。   
 > 注意反向传导比正向传导多了一个参数bottom_need_backward_。在实现反向传导时，首先判断当前层是否需要反向传导的层，不需要则直接返回。  
 6. 正向传导和反向传导结束后，再调用SGDSolver::ApplyUpdate()成员函数进行权重更新。(根据选择的策略不同，调用solvers目录中不同的优化函数)。 
 7. 最后将迭代次数++iter_，继续while循环，直到迭代次数完成。
+
