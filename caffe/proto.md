@@ -17,11 +17,14 @@
 -----
 # .proto文件
 > 除了清晰的代码结构，让Caffe变得易用更应该归功于Google Protocol Buffer的使用。
-Google Protocol Buffer是Google开发的一个用于serializing结构化数据的开源工具
-> http://alanse7en.github.io/caffedai-ma-jie-xi-2/
-Caffe使用这个工具来定义Solver和Net，以及Net中每一个layer的参数。这使得只是想使用Caffe目前支持的Layer(已经非常丰富了)来做一些实验或者demo的用户可以不去和代码打交道，
+Google Protocol Buffer是Google开发的一个用于serializing结构化数据的开源工具  
+      
+> http://alanse7en.github.io/caffedai-ma-jie-xi-2/    
+    
+Caffe使用这个工具来定义Solver和Net，以及Net中每一个layer的参数。
+这使得只是想使用Caffe目前支持的Layer(已经非常丰富了)来做一些实验或者demo的用户可以不去和代码打交道，
 只需要在*.prototxt文件中描述自己的Solver和Net即可，再通过Caffe提供的command line interfaces就可以完成模型的train/finetune/test等功能。
-
+   
 -----------------
 # 命令行接口
 
