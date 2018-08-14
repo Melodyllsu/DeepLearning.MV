@@ -12,3 +12,8 @@
 - [caffe 代码解析](http://alanse7en.github.io/caffedai-ma-jie-xi-4/)
 
 
+- [Caffe 的几个重要文件的说明](https://blog.csdn.net/cham_3/article/details/72141753)  
+1.solver.prototxt  
+2.train_val.prototxt  
+3.train.sh  
+
