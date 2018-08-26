@@ -1,5 +1,6 @@
 > 代码链接：https://github.com/DeepScale/SqueezeNet  
-> 参考链接：
+> 参考链接：https://blog.csdn.net/xbinworld/article/details/50897870  
+https://blog.csdn.net/u010402786/article/details/77720483  
 
 
 **What's new in SqueezeNet v1.1?**
@@ -46,7 +47,7 @@ queezenet 1.0 : **9层fire module（2,3,4,5,6,7,8,9） + 2个卷积（1,10） + 
 ![squeezenet 参数数量](https://www.github.com/DragonFive/CVBasicOp/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1502707297973.jpg)
 
 ## 实验结果对比   
-![不同压缩方法在ImageNet上的对比实验结果](HelloWorld/PNG/squeezenet实验结果对比.png)  
+![不同压缩方法在ImageNet上的对比实验结果](https://github.com/Melodyllsu/HelloWorld/blob/master/PNG/squeezenet%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94.png)  
 
   相比传统的压缩方法，SqueezeNet能在保证精度不损（甚至略有提升）的情况下，达到最大的压缩率，将原始AlexNet从240MB压缩至4.8MB，而结合Deep Compression后更能达到0.47MB.  
   
