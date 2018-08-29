@@ -17,6 +17,7 @@ tracking中主要时间花费在3D到2D投影后的搜索correspondence上。
 
 ## ORB-SLAM (2014-2015)   
 code: https://github.com/raulmur/ORB_SLAM2   
+paper： http://webdiis.unizar.es/~raulmur/MurMontielTardosTRO15.pdf   
 - 最近比较火的ORB-SLAM算法，是keyframe-based SLAM派系的一个集大成者。ORB-SLAM算法基本沿用了PTAM的框架，
 将近几年来被验证有效的module都加了进来，做出一个稳定性和精度很高、可以用于室内/室外和小规模/大规模等各种场景的全能系统，刷爆各种benchmark，
 并开源了质量很高的代码，还摘得了IEEE Transactions on Robotics的年度best paper award。  
