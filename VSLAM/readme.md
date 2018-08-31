@@ -41,3 +41,10 @@ code： https://github.com/JakobEngel/dso
 - DSO是LSD-SLAM的作者Jakob Engel最近放出的另一个大杀器，从其展示的实验结果看，无论是robustness，或是accuracy，或是计算速度，都完爆LSD-SLAM和ORB-SLAM。 
 - **性能**  
 算法的计算速度上来看，正常设置可以在Intel i7-4910MQ CPU上处理640x480图像达到realtime的速度，参数低配时可以处理424x320图像达到5倍realtime的速度（不知道具体多少，150fps?）。  
+
+## SOFT-SLAM2（2017） ：面向自主无人机的高效立体视觉  
+SOFT-SLAM: Computationally Efficient Stereo Visual SLAM for Autonomous UAVs  
+code： nan  
+能够输出高精度地图以及稠密环境地图的立体视觉SLAM系统  
+目前在KITTI数据集中居于首位通过SOFT（基于特征跟踪的立体视觉里程计算法）进行位姿估计，建立一个基于特征点的位姿图SLAM方案。  
+SOFT-SLAM具有两个独立的线程分别进行里程计和建图工作，并且支持大范围的回环检测以及保证系统安全一致性。  
